@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import doc.scanner.br.app.scannerdoc.doc.scanner.br.app.scanner.integrator.IntentIntegrator;
 
 public class ScannerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
