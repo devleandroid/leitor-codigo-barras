@@ -1,0 +1,5 @@
+<root>
+    <item name='com.google.zxing.integration.android.IntentResult'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>
