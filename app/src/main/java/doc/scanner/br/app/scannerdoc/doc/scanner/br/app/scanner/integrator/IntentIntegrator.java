@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package doc.scanner.br.app.scannerdoc.doc.scanner.br.app.scanner.code;
+package doc.scanner.br.app.scannerdoc.doc.scanner.br.app.scanner.integrator;
 
 import java.util.Arrays;
 import java.util.Collection;
