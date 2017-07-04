@@ -1,5 +1,10 @@
 package doc.scanner.br.app.scannerdoc;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,10 +17,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+import doc.scanner.br.app.scannerdoc.doc.scanner.br.app.scanner.integrator.IntentIntegrator;
+import doc.scanner.br.app.scannerdoc.doc.scanner.br.app.scanner.integrator.IntentResult;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class ScannerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private String resultData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
@@ -43,6 +55,41 @@ public class ScannerActivity extends AppCompatActivity
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode,Intent data) {
+        super.onActivityResult( requestCode,resultCode,data );
+        IntentResult result = IntentIntegrator.parseActivityResult(resultCode, requestCode, data);
+        try {
+            URL site = new URL( "https://www.google.com.br/search?q=" );
+
+            if (result != null) {
+                if (result.getContents() == null){
+                    Toast.makeText( getApplicationContext(), "", Toast.LENGTH_SHORT ).show();
+                } else {
+                    final AlertDialog.Builder builder = new AlertDialog.Builder( getApplication() );
+                    builder.setTitle( "Texto de alerta do aplicativo" )
+                            .setMessage( "Codigo: " + result )
+                            .setPositiveButton( "Ok",new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface,int i) {
+
+                                }
+                            } ).setNegativeButton( "Cancelar",new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface,int i) {
+
+                        }
+                    } );
+                    builder.create();
+                    builder.show();
+                }
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById( R.id.drawer_layout );
