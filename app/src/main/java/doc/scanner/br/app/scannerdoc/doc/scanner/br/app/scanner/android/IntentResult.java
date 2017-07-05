@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package doc.scanner.br.app.scannerdoc.doc.scanner.br.app.scanner.integrator;
+package doc.scanner.br.app.scannerdoc.doc.scanner.br.app.scanner.android;
 
 /**
  * <p>Encapsulates the result of a barcode scan invoked through {@link com.google.zxing.integration.android.IntentIntegrator}.</p>

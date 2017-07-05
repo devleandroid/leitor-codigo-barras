@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package doc.scanner.br.app.scannerdoc.doc.scanner.br.app.scanner.integrator;
+package doc.scanner.br.app.scannerdoc.doc.scanner.br.app.scanner.android;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -119,7 +119,7 @@ public class IntentIntegrator {
             // TODO add more -- what else supports this intent?
     );
 
-    private final Activity activity;
+    private Activity activity;
     private String title;
     private String message;
     private String buttonYes;

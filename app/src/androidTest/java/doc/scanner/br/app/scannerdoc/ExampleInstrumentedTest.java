@@ -23,4 +23,14 @@ public class ExampleInstrumentedTest {
 
         assertEquals( "doc.scanner.br.app.scannerdoc",appContext.getPackageName() );
     }
+
+    @Test
+    public void verificaScannerBarcode(){
+
+    }
+
+    @Test
+    public void verificaRetornoBarcode(){
+
+    }
 }
